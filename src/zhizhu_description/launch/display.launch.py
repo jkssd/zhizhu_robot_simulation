@@ -1,4 +1,4 @@
-"""View the zhizhu model in RViz."""
+"""View the zhizhu model in RViz (with GUI sliders to move the legs)."""
 import os
 
 from ament_index_python.packages import get_package_share_directory
@@ -13,11 +13,10 @@ def generate_launch_description():
     with open(urdf_path, "r") as f:
         robot_description = f.read()
 
-    # joint_state_publisher reads the URDF from a FILE (positional argument),
-    # publishes /joint_states (all joints at 0) so robot_state_publisher emits TF.
+    # joint_state_publisher_gui: a slider for every joint, publishes /joint_states
     joint_state_publisher = Node(
-        package="joint_state_publisher",
-        executable="joint_state_publisher",
+        package="joint_state_publisher_gui",
+        executable="joint_state_publisher_gui",
         arguments=[urdf_path],
     )
 

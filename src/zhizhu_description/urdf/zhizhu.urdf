@@ -16,7 +16,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/body.stl"/>
+        <box size="0.782 0.700 0.442"/>
       </geometry>
     </collision>
     <inertial>
@@ -33,7 +33,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rf_coxa.stl"/>
+        <box size="0.692 0.404 0.268"/>
       </geometry>
     </collision>
     <inertial>
@@ -50,7 +50,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rf_femur.stl"/>
+        <box size="0.782 0.398 0.204"/>
       </geometry>
     </collision>
     <inertial>
@@ -67,7 +67,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rf_foot.stl"/>
+        <box size="0.203 0.204 0.212"/>
       </geometry>
     </collision>
     <inertial>
@@ -81,7 +81,7 @@
     <origin xyz="0.7292 0.4250 -0.0111"/>
     <axis xyz="0 0 1"/>
     <limit effort="50" lower="-1.57" upper="1.57" velocity="5"/>
-    <dynamics damping="0.1" friction="0.1"/>
+    <dynamics damping="0.5" friction="0.5"/>
   </joint>
   <joint name="knee_rf" type="revolute">
     <parent link="rf_coxa"/>
@@ -89,7 +89,7 @@
     <origin xyz="0.6209 0.2902 0.0107"/>
     <axis xyz="0 1 0"/>
     <limit effort="50" lower="-1.57" upper="1.57" velocity="5"/>
-    <dynamics damping="0.1" friction="0.1"/>
+    <dynamics damping="0.5" friction="0.5"/>
   </joint>
   <joint name="ankle_rf" type="revolute">
     <parent link="rf_femur"/>
@@ -97,7 +97,7 @@
     <origin xyz="0.2435 0.1004 -0.0647"/>
     <axis xyz="0 1 0"/>
     <limit effort="30" lower="-0.78" upper="0.78" velocity="5"/>
-    <dynamics damping="0.1" friction="0.1"/>
+    <dynamics damping="0.5" friction="0.5"/>
   </joint>
   <link name="rm_coxa">
     <visual>
@@ -108,7 +108,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rm_coxa.stl"/>
+        <box size="0.728 0.116 0.227"/>
       </geometry>
     </collision>
     <inertial>
@@ -125,7 +125,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rm_femur.stl"/>
+        <box size="0.837 0.111 0.251"/>
       </geometry>
     </collision>
     <inertial>
@@ -142,7 +142,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rm_foot.stl"/>
+        <box size="0.202 0.202 0.215"/>
       </geometry>
     </collision>
     <inertial>
@@ -156,7 +156,7 @@
     <origin xyz="0.7729 -0.0080 -0.0299"/>
     <axis xyz="0 0 1"/>
     <limit effort="50" lower="-1.57" upper="1.57" velocity="5"/>
-    <dynamics damping="0.1" friction="0.1"/>
+    <dynamics damping="0.5" friction="0.5"/>
   </joint>
   <joint name="knee_rm" type="revolute">
     <parent link="rm_coxa"/>
@@ -164,7 +164,7 @@
     <origin xyz="0.6838 -0.0121 -0.1247"/>
     <axis xyz="0 1 0"/>
     <limit effort="50" lower="-1.57" upper="1.57" velocity="5"/>
-    <dynamics damping="0.1" friction="0.1"/>
+    <dynamics damping="0.5" friction="0.5"/>
   </joint>
   <joint name="ankle_rm" type="revolute">
     <parent link="rm_femur"/>
@@ -172,7 +172,7 @@
     <origin xyz="0.2718 -0.0053 -0.0815"/>
     <axis xyz="0 1 0"/>
     <limit effort="30" lower="-0.78" upper="0.78" velocity="5"/>
-    <dynamics damping="0.1" friction="0.1"/>
+    <dynamics damping="0.5" friction="0.5"/>
   </joint>
   <link name="rr_coxa">
     <visual>
@@ -183,7 +183,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rr_coxa.stl"/>
+        <box size="0.697 0.377 0.338"/>
       </geometry>
     </collision>
     <inertial>
@@ -200,7 +200,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rr_femur.stl"/>
+        <box size="0.792 0.323 0.318"/>
       </geometry>
     </collision>
     <inertial>
@@ -217,7 +217,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rr_foot.stl"/>
+        <box size="0.201 0.204 0.206"/>
       </geometry>
     </collision>
     <inertial>
@@ -231,7 +231,7 @@
     <origin xyz="0.7419 -0.4061 0.0572"/>
     <axis xyz="0 0 1"/>
     <limit effort="50" lower="-1.57" upper="1.57" velocity="5"/>
-    <dynamics damping="0.1" friction="0.1"/>
+    <dynamics damping="0.5" friction="0.5"/>
   </joint>
   <joint name="knee_rr" type="revolute">
     <parent link="rr_coxa"/>
@@ -239,7 +239,7 @@
     <origin xyz="0.6345 -0.2340 -0.0648"/>
     <axis xyz="0 1 0"/>
     <limit effort="50" lower="-1.57" upper="1.57" velocity="5"/>
-    <dynamics damping="0.1" friction="0.1"/>
+    <dynamics damping="0.5" friction="0.5"/>
   </joint>
   <joint name="ankle_rr" type="revolute">
     <parent link="rr_femur"/>
@@ -247,7 +247,7 @@
     <origin xyz="0.2428 -0.0751 -0.1039"/>
     <axis xyz="0 1 0"/>
     <limit effort="30" lower="-0.78" upper="0.78" velocity="5"/>
-    <dynamics damping="0.1" friction="0.1"/>
+    <dynamics damping="0.5" friction="0.5"/>
   </joint>
   <link name="lf_coxa">
     <visual>
@@ -258,7 +258,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lf_coxa.stl"/>
+        <box size="0.728 0.377 0.168"/>
       </geometry>
     </collision>
     <inertial>
@@ -275,7 +275,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lf_femur.stl"/>
+        <box size="0.717 0.323 0.495"/>
       </geometry>
     </collision>
     <inertial>
@@ -292,7 +292,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lf_foot.stl"/>
+        <box size="0.203 0.204 0.214"/>
       </geometry>
     </collision>
     <inertial>
@@ -306,7 +306,7 @@
     <origin xyz="-0.7421 0.4061 -0.0562"/>
     <axis xyz="0 0 1"/>
     <limit effort="50" lower="-1.57" upper="1.57" velocity="5"/>
-    <dynamics damping="0.1" friction="0.1"/>
+    <dynamics damping="0.5" friction="0.5"/>
   </joint>
   <joint name="knee_lf" type="revolute">
     <parent link="lf_coxa"/>
@@ -314,7 +314,7 @@
     <origin xyz="-0.5934 0.2340 -0.2338"/>
     <axis xyz="0 1 0"/>
     <limit effort="50" lower="-1.57" upper="1.57" velocity="5"/>
-    <dynamics damping="0.1" friction="0.1"/>
+    <dynamics damping="0.5" friction="0.5"/>
   </joint>
   <joint name="ankle_lf" type="revolute">
     <parent link="lf_femur"/>
@@ -322,7 +322,7 @@
     <origin xyz="-0.2057 0.0751 -0.1656"/>
     <axis xyz="0 1 0"/>
     <limit effort="30" lower="-0.78" upper="0.78" velocity="5"/>
-    <dynamics damping="0.1" friction="0.1"/>
+    <dynamics damping="0.5" friction="0.5"/>
   </joint>
   <link name="lm_coxa">
     <visual>
@@ -333,7 +333,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lm_coxa.stl"/>
+        <box size="0.723 0.116 0.192"/>
       </geometry>
     </collision>
     <inertial>
@@ -350,7 +350,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lm_femur.stl"/>
+        <box size="0.818 0.111 0.337"/>
       </geometry>
     </collision>
     <inertial>
@@ -367,7 +367,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lm_foot.stl"/>
+        <box size="0.204 0.202 0.209"/>
       </geometry>
     </collision>
     <inertial>
@@ -381,7 +381,7 @@
     <origin xyz="-0.7678 0.0080 -0.0806"/>
     <axis xyz="0 0 1"/>
     <limit effort="50" lower="-1.57" upper="1.57" velocity="5"/>
-    <dynamics damping="0.1" friction="0.1"/>
+    <dynamics damping="0.5" friction="0.5"/>
   </joint>
   <joint name="knee_lm" type="revolute">
     <parent link="lm_coxa"/>
@@ -389,7 +389,7 @@
     <origin xyz="-0.6650 0.0121 -0.2024"/>
     <axis xyz="0 1 0"/>
     <limit effort="50" lower="-1.57" upper="1.57" velocity="5"/>
-    <dynamics damping="0.1" friction="0.1"/>
+    <dynamics damping="0.5" friction="0.5"/>
   </joint>
   <joint name="ankle_lm" type="revolute">
     <parent link="lm_femur"/>
@@ -397,7 +397,7 @@
     <origin xyz="-0.2607 0.0053 -0.1121"/>
     <axis xyz="0 1 0"/>
     <limit effort="30" lower="-0.78" upper="0.78" velocity="5"/>
-    <dynamics damping="0.1" friction="0.1"/>
+    <dynamics damping="0.5" friction="0.5"/>
   </joint>
   <link name="lr_coxa">
     <visual>
@@ -408,7 +408,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lr_coxa.stl"/>
+        <box size="0.707 0.404 0.165"/>
       </geometry>
     </collision>
     <inertial>
@@ -425,7 +425,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lr_femur.stl"/>
+        <box size="0.755 0.398 0.336"/>
       </geometry>
     </collision>
     <inertial>
@@ -442,7 +442,7 @@
     </visual>
     <collision>
       <geometry>
-        <mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lr_foot.stl"/>
+        <box size="0.202 0.204 0.211"/>
       </geometry>
     </collision>
     <inertial>
@@ -456,7 +456,7 @@
     <origin xyz="-0.7200 -0.4250 -0.0891"/>
     <axis xyz="0 0 1"/>
     <limit effort="50" lower="-1.57" upper="1.57" velocity="5"/>
-    <dynamics damping="0.1" friction="0.1"/>
+    <dynamics damping="0.5" friction="0.5"/>
   </joint>
   <joint name="knee_lr" type="revolute">
     <parent link="lr_coxa"/>
@@ -464,7 +464,7 @@
     <origin xyz="-0.6110 -0.2902 -0.1110"/>
     <axis xyz="0 1 0"/>
     <limit effort="50" lower="-1.57" upper="1.57" velocity="5"/>
-    <dynamics damping="0.1" friction="0.1"/>
+    <dynamics damping="0.5" friction="0.5"/>
   </joint>
   <joint name="ankle_lr" type="revolute">
     <parent link="lr_femur"/>
@@ -472,6 +472,6 @@
     <origin xyz="-0.2262 -0.1004 -0.1111"/>
     <axis xyz="0 1 0"/>
     <limit effort="30" lower="-0.78" upper="0.78" velocity="5"/>
-    <dynamics damping="0.1" friction="0.1"/>
+    <dynamics damping="0.5" friction="0.5"/>
   </joint>
 </robot>

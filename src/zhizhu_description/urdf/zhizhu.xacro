@@ -3,38 +3,38 @@
 
   <material name="zhizhu_gray"><color rgba="0.7 0.7 0.72 1.0"/></material>
 
-  <xacro:macro name="leg" params="name hip knee ankle">
+  <xacro:macro name="leg" params="name hip knee ankle coxa_box femur_box foot_box">
     <link name="${name}_coxa">
       <visual><geometry><mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/${name}_coxa.stl"/></geometry><material name="zhizhu_gray"/></visual>
-      <collision><geometry><mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/${name}_coxa.stl"/></geometry></collision>
+      <collision><geometry><box size="${coxa_box}"/></geometry></collision>
       <inertial><mass value="1.5"/><inertia ixx="0.05" ixy="0" ixz="0" iyy="0.05" iyz="0" izz="0.05"/></inertial>
     </link>
     <link name="${name}_femur">
       <visual><geometry><mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/${name}_femur.stl"/></geometry><material name="zhizhu_gray"/></visual>
-      <collision><geometry><mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/${name}_femur.stl"/></geometry></collision>
+      <collision><geometry><box size="${femur_box}"/></geometry></collision>
       <inertial><mass value="1.2"/><inertia ixx="0.04" ixy="0" ixz="0" iyy="0.04" iyz="0" izz="0.04"/></inertial>
     </link>
     <link name="${name}_foot">
       <visual><geometry><mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/${name}_foot.stl"/></geometry><material name="zhizhu_gray"/></visual>
-      <collision><geometry><mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/${name}_foot.stl"/></geometry></collision>
+      <collision><geometry><box size="${foot_box}"/></geometry></collision>
       <inertial><mass value="0.8"/><inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/></inertial>
     </link>
-    <joint name="hip_${name}" type="revolute"><parent link="body"/><child link="${name}_coxa"/><origin xyz="${hip}"/><axis xyz="0 0 1"/><limit lower="-1.57" upper="1.57" effort="50" velocity="5"/><dynamics damping="0.1" friction="0.1"/></joint>
-    <joint name="knee_${name}" type="revolute"><parent link="${name}_coxa"/><child link="${name}_femur"/><origin xyz="${knee}"/><axis xyz="0 1 0"/><limit lower="-1.57" upper="1.57" effort="50" velocity="5"/><dynamics damping="0.1" friction="0.1"/></joint>
-    <joint name="ankle_${name}" type="revolute"><parent link="${name}_femur"/><child link="${name}_foot"/><origin xyz="${ankle}"/><axis xyz="0 1 0"/><limit lower="-0.78" upper="0.78" effort="30" velocity="5"/><dynamics damping="0.1" friction="0.1"/></joint>
+    <joint name="hip_${name}" type="revolute"><parent link="body"/><child link="${name}_coxa"/><origin xyz="${hip}"/><axis xyz="0 0 1"/><limit lower="-1.57" upper="1.57" effort="50" velocity="5"/><dynamics damping="0.5" friction="0.5"/></joint>
+    <joint name="knee_${name}" type="revolute"><parent link="${name}_coxa"/><child link="${name}_femur"/><origin xyz="${knee}"/><axis xyz="0 1 0"/><limit lower="-1.57" upper="1.57" effort="50" velocity="5"/><dynamics damping="0.5" friction="0.5"/></joint>
+    <joint name="ankle_${name}" type="revolute"><parent link="${name}_femur"/><child link="${name}_foot"/><origin xyz="${ankle}"/><axis xyz="0 1 0"/><limit lower="-0.78" upper="0.78" effort="30" velocity="5"/><dynamics damping="0.5" friction="0.5"/></joint>
   </xacro:macro>
 
   <link name="body">
     <visual><geometry><mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/body.stl"/></geometry><material name="zhizhu_gray"/></visual>
-    <collision><geometry><mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/body.stl"/></geometry></collision>
+    <collision><geometry><box size="0.782 0.700 0.442"/></geometry></collision>
     <inertial><mass value="6.0"/><inertia ixx="0.4" ixy="0" ixz="0" iyy="0.35" iyz="0" izz="0.45"/></inertial>
   </link>
 
-  <xacro:leg name="rf" hip="0.7292 0.4250 -0.0111" knee="0.6209 0.2902 0.0107" ankle="0.2435 0.1004 -0.0647"/>
-  <xacro:leg name="rm" hip="0.7729 -0.0080 -0.0299" knee="0.6838 -0.0121 -0.1247" ankle="0.2718 -0.0053 -0.0815"/>
-  <xacro:leg name="rr" hip="0.7419 -0.4061 0.0572" knee="0.6345 -0.2340 -0.0648" ankle="0.2428 -0.0751 -0.1039"/>
-  <xacro:leg name="lf" hip="-0.7421 0.4061 -0.0562" knee="-0.5934 0.2340 -0.2338" ankle="-0.2057 0.0751 -0.1656"/>
-  <xacro:leg name="lm" hip="-0.7678 0.0080 -0.0806" knee="-0.6650 0.0121 -0.2024" ankle="-0.2607 0.0053 -0.1121"/>
-  <xacro:leg name="lr" hip="-0.7200 -0.4250 -0.0891" knee="-0.6110 -0.2902 -0.1110" ankle="-0.2262 -0.1004 -0.1111"/>
+  <xacro:leg name="rf" hip="0.7292 0.4250 -0.0111" knee="0.6209 0.2902 0.0107" ankle="0.2435 0.1004 -0.0647" coxa_box="0.692 0.404 0.268" femur_box="0.782 0.398 0.204" foot_box="0.203 0.204 0.212"/>
+  <xacro:leg name="rm" hip="0.7729 -0.0080 -0.0299" knee="0.6838 -0.0121 -0.1247" ankle="0.2718 -0.0053 -0.0815" coxa_box="0.728 0.116 0.227" femur_box="0.837 0.111 0.251" foot_box="0.202 0.202 0.215"/>
+  <xacro:leg name="rr" hip="0.7419 -0.4061 0.0572" knee="0.6345 -0.2340 -0.0648" ankle="0.2428 -0.0751 -0.1039" coxa_box="0.697 0.377 0.338" femur_box="0.792 0.323 0.318" foot_box="0.201 0.204 0.206"/>
+  <xacro:leg name="lf" hip="-0.7421 0.4061 -0.0562" knee="-0.5934 0.2340 -0.2338" ankle="-0.2057 0.0751 -0.1656" coxa_box="0.728 0.377 0.168" femur_box="0.717 0.323 0.495" foot_box="0.203 0.204 0.214"/>
+  <xacro:leg name="lm" hip="-0.7678 0.0080 -0.0806" knee="-0.6650 0.0121 -0.2024" ankle="-0.2607 0.0053 -0.1121" coxa_box="0.723 0.116 0.192" femur_box="0.818 0.111 0.337" foot_box="0.204 0.202 0.209"/>
+  <xacro:leg name="lr" hip="-0.7200 -0.4250 -0.0891" knee="-0.6110 -0.2902 -0.1110" ankle="-0.2262 -0.1004 -0.1111" coxa_box="0.707 0.404 0.165" femur_box="0.755 0.398 0.336" foot_box="0.202 0.204 0.211"/>
 
 </robot>
