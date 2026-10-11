@@ -79,7 +79,7 @@
     <parent link="body"/>
     <child link="rf_coxa"/>
     <origin xyz="0.7292 0.4250 -0.0111"/>
-    <axis xyz="0 0 1"/>
+    <axis xyz="0.4234 -0.9059 0.0000"/>
     <limit effort="50" lower="-1.57" upper="1.57" velocity="5"/>
     <dynamics damping="0.5" friction="0.5"/>
   </joint>
@@ -87,7 +87,7 @@
     <parent link="rf_coxa"/>
     <child link="rf_femur"/>
     <origin xyz="0.6209 0.2902 0.0107"/>
-    <axis xyz="0 1 0"/>
+    <axis xyz="-0.4145 0.8932 -0.1741"/>
     <limit effort="50" lower="-1.57" upper="1.57" velocity="5"/>
     <dynamics damping="0.5" friction="0.5"/>
   </joint>
@@ -95,7 +95,7 @@
     <parent link="rf_femur"/>
     <child link="rf_foot"/>
     <origin xyz="0.2435 0.1004 -0.0647"/>
-    <axis xyz="0 1 0"/>
+    <axis xyz="-0.4145 0.8932 -0.1741"/>
     <limit effort="30" lower="-0.78" upper="0.78" velocity="5"/>
     <dynamics damping="0.5" friction="0.5"/>
   </joint>
@@ -154,7 +154,7 @@
     <parent link="body"/>
     <child link="rm_coxa"/>
     <origin xyz="0.7729 -0.0080 -0.0299"/>
-    <axis xyz="0 0 1"/>
+    <axis xyz="-0.0178 -0.9998 0.0000"/>
     <limit effort="50" lower="-1.57" upper="1.57" velocity="5"/>
     <dynamics damping="0.5" friction="0.5"/>
   </joint>
@@ -162,7 +162,7 @@
     <parent link="rm_coxa"/>
     <child link="rm_femur"/>
     <origin xyz="0.6838 -0.0121 -0.1247"/>
-    <axis xyz="0 1 0"/>
+    <axis xyz="0.0149 0.9998 -0.0157"/>
     <limit effort="50" lower="-1.57" upper="1.57" velocity="5"/>
     <dynamics damping="0.5" friction="0.5"/>
   </joint>
@@ -170,7 +170,7 @@
     <parent link="rm_femur"/>
     <child link="rm_foot"/>
     <origin xyz="0.2718 -0.0053 -0.0815"/>
-    <axis xyz="0 1 0"/>
+    <axis xyz="0.0149 0.9998 -0.0157"/>
     <limit effort="30" lower="-0.78" upper="0.78" velocity="5"/>
     <dynamics damping="0.5" friction="0.5"/>
   </joint>
@@ -229,7 +229,7 @@
     <parent link="body"/>
     <child link="rr_coxa"/>
     <origin xyz="0.7419 -0.4061 0.0572"/>
-    <axis xyz="0 0 1"/>
+    <axis xyz="-0.3460 -0.9382 0.0000"/>
     <limit effort="50" lower="-1.57" upper="1.57" velocity="5"/>
     <dynamics damping="0.5" friction="0.5"/>
   </joint>
@@ -237,7 +237,7 @@
     <parent link="rr_coxa"/>
     <child link="rr_femur"/>
     <origin xyz="0.6345 -0.2340 -0.0648"/>
-    <axis xyz="0 1 0"/>
+    <axis xyz="0.3561 0.9192 0.1678"/>
     <limit effort="50" lower="-1.57" upper="1.57" velocity="5"/>
     <dynamics damping="0.5" friction="0.5"/>
   </joint>
@@ -245,7 +245,7 @@
     <parent link="rr_femur"/>
     <child link="rr_foot"/>
     <origin xyz="0.2428 -0.0751 -0.1039"/>
-    <axis xyz="0 1 0"/>
+    <axis xyz="0.3561 0.9192 0.1678"/>
     <limit effort="30" lower="-0.78" upper="0.78" velocity="5"/>
     <dynamics damping="0.5" friction="0.5"/>
   </joint>
@@ -304,7 +304,7 @@
     <parent link="body"/>
     <child link="lf_coxa"/>
     <origin xyz="-0.7421 0.4061 -0.0562"/>
-    <axis xyz="0 0 1"/>
+    <axis xyz="0.3668 0.9303 -0.0000"/>
     <limit effort="50" lower="-1.57" upper="1.57" velocity="5"/>
     <dynamics damping="0.5" friction="0.5"/>
   </joint>
@@ -312,7 +312,7 @@
     <parent link="lf_coxa"/>
     <child link="lf_femur"/>
     <origin xyz="-0.5934 0.2340 -0.2338"/>
-    <axis xyz="0 1 0"/>
+    <axis xyz="-0.3882 -0.9192 0.0654"/>
     <limit effort="50" lower="-1.57" upper="1.57" velocity="5"/>
     <dynamics damping="0.5" friction="0.5"/>
   </joint>
@@ -320,7 +320,7 @@
     <parent link="lf_femur"/>
     <child link="lf_foot"/>
     <origin xyz="-0.2057 0.0751 -0.1656"/>
-    <axis xyz="0 1 0"/>
+    <axis xyz="-0.3882 -0.9192 0.0654"/>
     <limit effort="30" lower="-0.78" upper="0.78" velocity="5"/>
     <dynamics damping="0.5" friction="0.5"/>
   </joint>
@@ -379,7 +379,7 @@
     <parent link="body"/>
     <child link="lm_coxa"/>
     <origin xyz="-0.7678 0.0080 -0.0806"/>
-    <axis xyz="0 0 1"/>
+    <axis xyz="0.0183 0.9998 -0.0000"/>
     <limit effort="50" lower="-1.57" upper="1.57" velocity="5"/>
     <dynamics damping="0.5" friction="0.5"/>
   </joint>
@@ -387,7 +387,7 @@
     <parent link="lm_coxa"/>
     <child link="lm_femur"/>
     <origin xyz="-0.6650 0.0121 -0.2024"/>
-    <axis xyz="0 1 0"/>
+    <axis xyz="-0.0130 -0.9998 -0.0173"/>
     <limit effort="50" lower="-1.57" upper="1.57" velocity="5"/>
     <dynamics damping="0.5" friction="0.5"/>
   </joint>
@@ -395,7 +395,7 @@
     <parent link="lm_femur"/>
     <child link="lm_foot"/>
     <origin xyz="-0.2607 0.0053 -0.1121"/>
-    <axis xyz="0 1 0"/>
+    <axis xyz="-0.0130 -0.9998 -0.0173"/>
     <limit effort="30" lower="-0.78" upper="0.78" velocity="5"/>
     <dynamics damping="0.5" friction="0.5"/>
   </joint>
@@ -454,7 +454,7 @@
     <parent link="body"/>
     <child link="lr_coxa"/>
     <origin xyz="-0.7200 -0.4250 -0.0891"/>
-    <axis xyz="0 0 1"/>
+    <axis xyz="-0.4290 0.9033 0.0000"/>
     <limit effort="50" lower="-1.57" upper="1.57" velocity="5"/>
     <dynamics damping="0.5" friction="0.5"/>
   </joint>
@@ -462,7 +462,7 @@
     <parent link="lr_coxa"/>
     <child link="lr_femur"/>
     <origin xyz="-0.6110 -0.2902 -0.1110"/>
-    <axis xyz="0 1 0"/>
+    <axis xyz="0.4406 -0.8932 -0.0896"/>
     <limit effort="50" lower="-1.57" upper="1.57" velocity="5"/>
     <dynamics damping="0.5" friction="0.5"/>
   </joint>
@@ -470,7 +470,7 @@
     <parent link="lr_femur"/>
     <child link="lr_foot"/>
     <origin xyz="-0.2262 -0.1004 -0.1111"/>
-    <axis xyz="0 1 0"/>
+    <axis xyz="0.4406 -0.8932 -0.0896"/>
     <limit effort="30" lower="-0.78" upper="0.78" velocity="5"/>
     <dynamics damping="0.5" friction="0.5"/>
   </joint>
