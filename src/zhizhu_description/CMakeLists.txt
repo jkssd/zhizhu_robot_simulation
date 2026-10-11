@@ -10,8 +10,14 @@ find_package(ament_cmake REQUIRED)
 # Install assets so `package://zhizhu_description/meshes/zhizhu.stl` resolves
 # to <install_prefix>/share/zhizhu_description/meshes/zhizhu.stl at runtime.
 install(
-  DIRECTORY meshes urdf launch rviz worlds
+  DIRECTORY meshes urdf launch rviz worlds config
   DESTINATION share/${PROJECT_NAME}
+)
+
+# Gait node (executable Python script)
+install(
+  PROGRAMS scripts/gait_node.py
+  DESTINATION lib/${PROJECT_NAME}
 )
 
 if(BUILD_TESTING)
