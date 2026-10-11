@@ -5,119 +5,119 @@
     <light type="directional" name="sun"><pose>0 0 10 0 0 0</pose><diffuse>0.9 0.9 0.9 1</diffuse><specular>0.2 0.2 0.2 1</specular><direction>-0.5 0.3 -1</direction></light>
     <include><uri>model://ground_plane</uri></include>
     <model name="zhizhu"><pose>0 0 0.6012 0 0 0</pose>
-      <link name="body"><pose>0.0000 0.0000 0.0000 0 0 0</pose>
-        <visual name="visual"><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/body.stl</uri></mesh></geometry></visual>
-        <collision name="collision"><geometry><box><size>0.782 0.700 0.442</size></box></geometry></collision>
-        <inertial><mass>6.0</mass><inertia><ixx>0.4</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.35</iyy><iyz>0</iyz><izz>0.45</izz></inertia></inertial>
+      <link name="body">
+        <visual name="visual"><pose>-0.0226 -0.0000 0.6012 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/body.stl</uri></mesh></geometry></visual>
+        <collision name="collision"><pose>-0.0226 -0.0000 0.6012 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/body.stl</uri></mesh></geometry><surface><friction><ode><mu>0.5</mu><mu2>0.5</mu2></ode></friction></surface></collision>
+        <inertial><mass>8.0</mass><inertia><ixx>0.45689595476533934</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.5383152171087394</iyy><iyz>0</iyz><izz>0.7347524621623359</izz></inertia></inertial>
       </link>
-      <link name="rf_coxa"><pose>0.7292 0.4250 -0.0111 0 0 0</pose>
-        <visual name="visual"><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rf_coxa.stl</uri></mesh></geometry></visual>
-        <collision name="collision"><geometry><box><size>0.692 0.404 0.268</size></box></geometry></collision>
-        <inertial><mass>1.5</mass><inertia><ixx>0.05</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.05</iyy><iyz>0</iyz><izz>0.05</izz></inertia></inertial>
+      <link name="rf_coxa">
+        <visual name="visual"><pose>0.3762 0.1602 0.1338 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rf_coxa.stl</uri></mesh></geometry></visual>
+        <collision name="collision"><pose>0.3762 0.1602 0.1338 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rf_coxa.stl</uri></mesh></geometry><surface><friction><ode><mu>0.5</mu><mu2>0.5</mu2></ode></friction></surface></collision>
+        <inertial><mass>1.5</mass><inertia><ixx>0.029409616411273133</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.06889297061101934</iyy><iyz>0</iyz><izz>0.08034197432448811</izz></inertia></inertial>
       </link>
-      <link name="rf_femur"><pose>1.3501 0.7152 -0.0004 0 0 0</pose>
-        <visual name="visual"><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rf_femur.stl</uri></mesh></geometry></visual>
-        <collision name="collision"><geometry><box><size>0.782 0.398 0.204</size></box></geometry></collision>
-        <inertial><mass>1.2</mass><inertia><ixx>0.04</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.04</iyy><iyz>0</iyz><izz>0.04</izz></inertia></inertial>
+      <link name="rf_femur">
+        <visual name="visual"><pose>0.4519 0.2318 -0.0762 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rf_femur.stl</uri></mesh></geometry></visual>
+        <collision name="collision"><pose>0.4519 0.2318 -0.0762 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rf_femur.stl</uri></mesh></geometry><surface><friction><ode><mu>0.5</mu><mu2>0.5</mu2></ode></friction></surface></collision>
+        <inertial><mass>1.0</mass><inertia><ixx>0.016682154859479735</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.05441733825343005</iyy><iyz>0</iyz><izz>0.06413692970520848</izz></inertia></inertial>
       </link>
-      <link name="rf_foot"><pose>1.5937 0.8156 -0.0651 0 0 0</pose>
-        <visual name="visual"><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rf_foot.stl</uri></mesh></geometry></visual>
-        <collision name="collision"><geometry><box><size>0.203 0.204 0.212</size></box></geometry></collision>
-        <inertial><mass>0.8</mass><inertia><ixx>0.01</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.01</iyy><iyz>0</iyz><izz>0.01</izz></inertia></inertial>
+      <link name="rf_foot">
+        <visual name="visual"><pose>0.0112 0.0129 -0.0569 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rf_foot.stl</uri></mesh></geometry></visual>
+        <collision name="collision"><pose>0.0112 0.0129 -0.0569 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rf_foot.stl</uri></mesh></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <inertial><mass>0.8</mass><inertia><ixx>0.00576613215545562</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.005753583412013892</iyy><iyz>0</iyz><izz>0.005517303129080313</izz></inertia></inertial>
       </link>
-      <joint name="hip_rf" type="fixed"><parent>body</parent><child>rf_coxa</child></joint>
-      <joint name="knee_rf" type="fixed"><parent>rf_coxa</parent><child>rf_femur</child></joint>
-      <joint name="ankle_rf" type="fixed"><parent>rf_femur</parent><child>rf_foot</child></joint>
-      <link name="rm_coxa"><pose>0.7729 -0.0080 -0.0299 0 0 0</pose>
-        <visual name="visual"><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rm_coxa.stl</uri></mesh></geometry></visual>
-        <collision name="collision"><geometry><box><size>0.728 0.116 0.227</size></box></geometry></collision>
-        <inertial><mass>1.5</mass><inertia><ixx>0.05</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.05</iyy><iyz>0</iyz><izz>0.05</izz></inertia></inertial>
+      <joint name="hip_rf" type="revolute"><parent>body</parent><child>rf_coxa</child><pose>0.3304 0.2647 0.4563 0 0 0</pose><axis><xyz>0.0000 0.0000 1.0000</xyz></axis><dynamics><damping>100</damping><friction>1.0</friction></dynamics></joint>
+      <joint name="knee_rf" type="revolute"><parent>rf_coxa</parent><child>rf_femur</child><pose>0.5452 0.2187 0.2207 0 0 0</pose><axis><xyz>0.4234 -0.9059 0.0000</xyz></axis><dynamics><damping>100</damping><friction>1.0</friction></dynamics></joint>
+      <joint name="ankle_rf" type="revolute"><parent>rf_femur</parent><child>rf_foot</child><pose>0.6843 0.3192 -0.0840 0 0 0</pose><axis><xyz>0.9059 0.4234 0.0000</xyz></axis><dynamics><damping>100</damping><friction>1.0</friction></dynamics></joint>
+      <link name="rm_coxa">
+        <visual name="visual"><pose>0.4242 0.0135 0.1161 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rm_coxa.stl</uri></mesh></geometry></visual>
+        <collision name="collision"><pose>0.4242 0.0135 0.1161 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rm_coxa.stl</uri></mesh></geometry><surface><friction><ode><mu>0.5</mu><mu2>0.5</mu2></ode></friction></surface></collision>
+        <inertial><mass>1.5</mass><inertia><ixx>0.008142651541770652</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.07276248128322552</iyy><iyz>0</iyz><izz>0.06798070097968605</izz></inertia></inertial>
       </link>
-      <link name="rm_femur"><pose>1.4567 -0.0201 -0.1547 0 0 0</pose>
-        <visual name="visual"><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rm_femur.stl</uri></mesh></geometry></visual>
-        <collision name="collision"><geometry><box><size>0.837 0.111 0.251</size></box></geometry></collision>
-        <inertial><mass>1.2</mass><inertia><ixx>0.04</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.04</iyy><iyz>0</iyz><izz>0.04</izz></inertia></inertial>
+      <link name="rm_femur">
+        <visual name="visual"><pose>0.5039 -0.0340 -0.0918 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rm_femur.stl</uri></mesh></geometry></visual>
+        <collision name="collision"><pose>0.5039 -0.0340 -0.0918 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rm_femur.stl</uri></mesh></geometry><surface><friction><ode><mu>0.5</mu><mu2>0.5</mu2></ode></friction></surface></collision>
+        <inertial><mass>1.0</mass><inertia><ixx>0.00626161059318745</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.06357089714033577</iyy><iyz>0</iyz><izz>0.059355992378542596</izz></inertia></inertial>
       </link>
-      <link name="rm_foot"><pose>1.7285 -0.0255 -0.2361 0 0 0</pose>
-        <visual name="visual"><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rm_foot.stl</uri></mesh></geometry></visual>
-        <collision name="collision"><geometry><box><size>0.202 0.202 0.215</size></box></geometry></collision>
-        <inertial><mass>0.8</mass><inertia><ixx>0.01</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.01</iyy><iyz>0</iyz><izz>0.01</izz></inertia></inertial>
+      <link name="rm_foot">
+        <visual name="visual"><pose>0.0076 0.0081 -0.0679 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rm_foot.stl</uri></mesh></geometry></visual>
+        <collision name="collision"><pose>0.0076 0.0081 -0.0679 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rm_foot.stl</uri></mesh></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <inertial><mass>0.8</mass><inertia><ixx>0.005820744954945208</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.005821179579917087</iyy><iyz>0</iyz><izz>0.0054600799489079</izz></inertia></inertial>
       </link>
-      <joint name="hip_rm" type="fixed"><parent>body</parent><child>rm_coxa</child></joint>
-      <joint name="knee_rm" type="fixed"><parent>rm_coxa</parent><child>rm_femur</child></joint>
-      <joint name="ankle_rm" type="fixed"><parent>rm_femur</parent><child>rm_foot</child></joint>
-      <link name="rr_coxa"><pose>0.7419 -0.4061 0.0572 0 0 0</pose>
-        <visual name="visual"><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rr_coxa.stl</uri></mesh></geometry></visual>
-        <collision name="collision"><geometry><box><size>0.697 0.377 0.338</size></box></geometry></collision>
-        <inertial><mass>1.5</mass><inertia><ixx>0.05</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.05</iyy><iyz>0</iyz><izz>0.05</izz></inertia></inertial>
+      <joint name="hip_rm" type="revolute"><parent>body</parent><child>rm_coxa</child><pose>0.3260 -0.0216 0.4551 0 0 0</pose><axis><xyz>0.0000 0.0000 1.0000</xyz></axis><dynamics><damping>100</damping><friction>1.0</friction></dynamics></joint>
+      <joint name="knee_rm" type="revolute"><parent>rm_coxa</parent><child>rm_femur</child><pose>0.6041 0.0354 0.0832 0 0 0</pose><axis><xyz>-0.0178 -0.9998 0.0000</xyz></axis><dynamics><damping>100</damping><friction>1.0</friction></dynamics></joint>
+      <joint name="ankle_rm" type="revolute"><parent>rm_femur</parent><child>rm_foot</child><pose>0.7681 -0.0474 -0.1054 0 0 0</pose><axis><xyz>0.9998 -0.0178 0.0000</xyz></axis><dynamics><damping>100</damping><friction>1.0</friction></dynamics></joint>
+      <link name="rr_coxa">
+        <visual name="visual"><pose>0.3716 -0.1473 0.1992 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rr_coxa.stl</uri></mesh></geometry></visual>
+        <collision name="collision"><pose>0.3716 -0.1473 0.1992 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rr_coxa.stl</uri></mesh></geometry><surface><friction><ode><mu>0.5</mu><mu2>0.5</mu2></ode></friction></surface></collision>
+        <inertial><mass>1.5</mass><inertia><ixx>0.03202336087056448</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.07498956091548961</iyy><iyz>0</iyz><izz>0.07843347488731861</izz></inertia></inertial>
       </link>
-      <link name="rr_femur"><pose>1.3764 -0.6400 -0.0077 0 0 0</pose>
-        <visual name="visual"><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rr_femur.stl</uri></mesh></geometry></visual>
-        <collision name="collision"><geometry><box><size>0.792 0.323 0.318</size></box></geometry></collision>
-        <inertial><mass>1.2</mass><inertia><ixx>0.04</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.04</iyy><iyz>0</iyz><izz>0.04</izz></inertia></inertial>
+      <link name="rr_femur">
+        <visual name="visual"><pose>0.4440 -0.1260 -0.1164 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rr_femur.stl</uri></mesh></geometry></visual>
+        <collision name="collision"><pose>0.4440 -0.1260 -0.1164 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rr_femur.stl</uri></mesh></geometry><surface><friction><ode><mu>0.5</mu><mu2>0.5</mu2></ode></friction></surface></collision>
+        <inertial><mass>1.0</mass><inertia><ixx>0.017112110895531444</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.0606315884135713</iyy><iyz>0</iyz><izz>0.060927667409476007</izz></inertia></inertial>
       </link>
-      <link name="rr_foot"><pose>1.6192 -0.7151 -0.1116 0 0 0</pose>
-        <visual name="visual"><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rr_foot.stl</uri></mesh></geometry></visual>
-        <collision name="collision"><geometry><box><size>0.201 0.204 0.206</size></box></geometry></collision>
-        <inertial><mass>0.8</mass><inertia><ixx>0.01</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.01</iyy><iyz>0</iyz><izz>0.01</izz></inertia></inertial>
+      <link name="rr_foot">
+        <visual name="visual"><pose>-0.0037 0.0244 -0.0656 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rr_foot.stl</uri></mesh></geometry></visual>
+        <collision name="collision"><pose>-0.0037 0.0244 -0.0656 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/rr_foot.stl</uri></mesh></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <inertial><mass>0.8</mass><inertia><ixx>0.005597406707224469</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.005517566550598866</iyy><iyz>0</iyz><izz>0.00544936758127003</izz></inertia></inertial>
       </link>
-      <joint name="hip_rr" type="fixed"><parent>body</parent><child>rr_coxa</child></joint>
-      <joint name="knee_rr" type="fixed"><parent>rr_coxa</parent><child>rr_femur</child></joint>
-      <joint name="ankle_rr" type="fixed"><parent>rr_femur</parent><child>rr_foot</child></joint>
-      <link name="lf_coxa"><pose>-0.7421 0.4061 -0.0562 0 0 0</pose>
-        <visual name="visual"><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lf_coxa.stl</uri></mesh></geometry></visual>
-        <collision name="collision"><geometry><box><size>0.728 0.377 0.168</size></box></geometry></collision>
-        <inertial><mass>1.5</mass><inertia><ixx>0.05</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.05</iyy><iyz>0</iyz><izz>0.05</izz></inertia></inertial>
+      <joint name="hip_rr" type="revolute"><parent>body</parent><child>rr_coxa</child><pose>0.3477 -0.2588 0.4591 0 0 0</pose><axis><xyz>0.0000 0.0000 1.0000</xyz></axis><dynamics><damping>100</damping><friction>1.0</friction></dynamics></joint>
+      <joint name="knee_rr" type="revolute"><parent>rr_coxa</parent><child>rr_femur</child><pose>0.5621 -0.2553 0.2508 0 0 0</pose><axis><xyz>-0.3460 -0.9382 0.0000</xyz></axis><dynamics><damping>100</damping><friction>1.0</friction></dynamics></joint>
+      <joint name="ankle_rr" type="revolute"><parent>rr_femur</parent><child>rr_foot</child><pose>0.6904 -0.2255 -0.1547 0 0 0</pose><axis><xyz>0.9382 -0.3460 0.0000</xyz></axis><dynamics><damping>100</damping><friction>1.0</friction></dynamics></joint>
+      <link name="lf_coxa">
+        <visual name="visual"><pose>-0.3739 0.1531 0.0876 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lf_coxa.stl</uri></mesh></geometry></visual>
+        <collision name="collision"><pose>-0.3739 0.1531 0.0876 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lf_coxa.stl</uri></mesh></geometry><surface><friction><ode><mu>0.5</mu><mu2>0.5</mu2></ode></friction></surface></collision>
+        <inertial><mass>1.5</mass><inertia><ixx>0.02125395047617179</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.06971999675005905</iyy><iyz>0</iyz><izz>0.08393330989108352</izz></inertia></inertial>
       </link>
-      <link name="lf_femur"><pose>-1.3355 0.6400 -0.2900 0 0 0</pose>
-        <visual name="visual"><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lf_femur.stl</uri></mesh></geometry></visual>
-        <collision name="collision"><geometry><box><size>0.717 0.323 0.495</size></box></geometry></collision>
-        <inertial><mass>1.2</mass><inertia><ixx>0.04</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.04</iyy><iyz>0</iyz><izz>0.04</izz></inertia></inertial>
+      <link name="lf_femur">
+        <visual name="visual"><pose>-0.4183 0.1350 -0.2354 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lf_femur.stl</uri></mesh></geometry></visual>
+        <collision name="collision"><pose>-0.4183 0.1350 -0.2354 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lf_femur.stl</uri></mesh></geometry><surface><friction><ode><mu>0.5</mu><mu2>0.5</mu2></ode></friction></surface></collision>
+        <inertial><mass>1.0</mass><inertia><ixx>0.029090709419882045</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.06317239065071024</iyy><iyz>0</iyz><izz>0.05148986630641918</izz></inertia></inertial>
       </link>
-      <link name="lf_foot"><pose>-1.5412 0.7151 -0.4556 0 0 0</pose>
-        <visual name="visual"><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lf_foot.stl</uri></mesh></geometry></visual>
-        <collision name="collision"><geometry><box><size>0.203 0.204 0.214</size></box></geometry></collision>
-        <inertial><mass>0.8</mass><inertia><ixx>0.01</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.01</iyy><iyz>0</iyz><izz>0.01</izz></inertia></inertial>
+      <link name="lf_foot">
+        <visual name="visual"><pose>0.0265 -0.0059 -0.0642 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lf_foot.stl</uri></mesh></geometry></visual>
+        <collision name="collision"><pose>0.0265 -0.0059 -0.0642 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lf_foot.stl</uri></mesh></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <inertial><mass>0.8</mass><inertia><ixx>0.005827255531603755</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.00580956447003926</iyy><iyz>0</iyz><izz>0.005511514653354351</izz></inertia></inertial>
       </link>
-      <joint name="hip_lf" type="fixed"><parent>body</parent><child>lf_coxa</child></joint>
-      <joint name="knee_lf" type="fixed"><parent>lf_coxa</parent><child>lf_femur</child></joint>
-      <joint name="ankle_lf" type="fixed"><parent>lf_femur</parent><child>lf_foot</child></joint>
-      <link name="lm_coxa"><pose>-0.7678 0.0080 -0.0806 0 0 0</pose>
-        <visual name="visual"><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lm_coxa.stl</uri></mesh></geometry></visual>
-        <collision name="collision"><geometry><box><size>0.723 0.116 0.192</size></box></geometry></collision>
-        <inertial><mass>1.5</mass><inertia><ixx>0.05</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.05</iyy><iyz>0</iyz><izz>0.05</izz></inertia></inertial>
+      <joint name="hip_lf" type="revolute"><parent>body</parent><child>lf_coxa</child><pose>-0.3908 0.2529 0.4574 0 0 0</pose><axis><xyz>0.0000 0.0000 1.0000</xyz></axis><dynamics><damping>100</damping><friction>1.0</friction></dynamics></joint>
+      <joint name="knee_lf" type="revolute"><parent>lf_coxa</parent><child>lf_femur</child><pose>-0.5490 0.2521 0.0893 0 0 0</pose><axis><xyz>0.3668 0.9303 -0.0000</xyz></axis><dynamics><damping>100</damping><friction>1.0</friction></dynamics></joint>
+      <joint name="ankle_lf" type="revolute"><parent>lf_femur</parent><child>lf_foot</child><pose>-0.6506 0.2160 -0.3368 0 0 0</pose><axis><xyz>-0.9303 0.3668 0.0000</xyz></axis><dynamics><damping>100</damping><friction>1.0</friction></dynamics></joint>
+      <link name="lm_coxa">
+        <visual name="visual"><pose>-0.4133 0.0314 0.0647 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lm_coxa.stl</uri></mesh></geometry></visual>
+        <collision name="collision"><pose>-0.4133 0.0314 0.0647 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lm_coxa.stl</uri></mesh></geometry><surface><friction><ode><mu>0.5</mu><mu2>0.5</mu2></ode></friction></surface></collision>
+        <inertial><mass>1.5</mass><inertia><ixx>0.00631194997026443</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.07005361498956408</iyy><iyz>0</iyz><izz>0.06710253625753083</izz></inertia></inertial>
       </link>
-      <link name="lm_femur"><pose>-1.4328 0.0201 -0.2830 0 0 0</pose>
-        <visual name="visual"><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lm_femur.stl</uri></mesh></geometry></visual>
-        <collision name="collision"><geometry><box><size>0.818 0.111 0.337</size></box></geometry></collision>
-        <inertial><mass>1.2</mass><inertia><ixx>0.04</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.04</iyy><iyz>0</iyz><izz>0.04</izz></inertia></inertial>
+      <link name="lm_femur">
+        <visual name="visual"><pose>-0.4518 0.0333 -0.1382 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lm_femur.stl</uri></mesh></geometry></visual>
+        <collision name="collision"><pose>-0.4518 0.0333 -0.1382 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lm_femur.stl</uri></mesh></geometry><surface><friction><ode><mu>0.5</mu><mu2>0.5</mu2></ode></friction></surface></collision>
+        <inertial><mass>1.0</mass><inertia><ixx>0.010460503529999114</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.06523651070922683</iyy><iyz>0</iyz><izz>0.05682271314822952</izz></inertia></inertial>
       </link>
-      <link name="lm_foot"><pose>-1.6935 0.0255 -0.3951 0 0 0</pose>
-        <visual name="visual"><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lm_foot.stl</uri></mesh></geometry></visual>
-        <collision name="collision"><geometry><box><size>0.204 0.202 0.209</size></box></geometry></collision>
-        <inertial><mass>0.8</mass><inertia><ixx>0.01</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.01</iyy><iyz>0</iyz><izz>0.01</izz></inertia></inertial>
+      <link name="lm_foot">
+        <visual name="visual"><pose>0.0098 -0.0081 -0.0653 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lm_foot.stl</uri></mesh></geometry></visual>
+        <collision name="collision"><pose>0.0098 -0.0081 -0.0653 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lm_foot.stl</uri></mesh></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <inertial><mass>0.8</mass><inertia><ixx>0.005646975215348027</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.005682775276875377</iyy><iyz>0</iyz><izz>0.005495442169125834</izz></inertia></inertial>
       </link>
-      <joint name="hip_lm" type="fixed"><parent>body</parent><child>lm_coxa</child></joint>
-      <joint name="knee_lm" type="fixed"><parent>lm_coxa</parent><child>lm_femur</child></joint>
-      <joint name="ankle_lm" type="fixed"><parent>lm_femur</parent><child>lm_foot</child></joint>
-      <link name="lr_coxa"><pose>-0.7200 -0.4250 -0.0891 0 0 0</pose>
-        <visual name="visual"><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lr_coxa.stl</uri></mesh></geometry></visual>
-        <collision name="collision"><geometry><box><size>0.707 0.404 0.165</size></box></geometry></collision>
-        <inertial><mass>1.5</mass><inertia><ixx>0.05</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.05</iyy><iyz>0</iyz><izz>0.05</izz></inertia></inertial>
+      <joint name="hip_lm" type="revolute"><parent>body</parent><child>lm_coxa</child><pose>-0.3772 -0.0234 0.4559 0 0 0</pose><axis><xyz>0.0000 0.0000 1.0000</xyz></axis><dynamics><damping>100</damping><friction>1.0</friction></dynamics></joint>
+      <joint name="knee_lm" type="revolute"><parent>lm_coxa</parent><child>lm_femur</child><pose>-0.6265 0.0103 0.0005 0 0 0</pose><axis><xyz>0.0183 0.9998 -0.0000</xyz></axis><dynamics><damping>100</damping><friction>1.0</friction></dynamics></joint>
+      <joint name="ankle_lm" type="revolute"><parent>lm_femur</parent><child>lm_foot</child><pose>-0.7223 0.0468 -0.1850 0 0 0</pose><axis><xyz>-0.9998 0.0183 0.0000</xyz></axis><dynamics><damping>100</damping><friction>1.0</friction></dynamics></joint>
+      <link name="lr_coxa">
+        <visual name="visual"><pose>-0.3733 -0.2018 0.0580 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lr_coxa.stl</uri></mesh></geometry></visual>
+        <collision name="collision"><pose>-0.3733 -0.2018 0.0580 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lr_coxa.stl</uri></mesh></geometry><surface><friction><ode><mu>0.5</mu><mu2>0.5</mu2></ode></friction></surface></collision>
+        <inertial><mass>1.5</mass><inertia><ixx>0.023829536418199543</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.0659409861085406</iyy><iyz>0</iyz><izz>0.08297008186327784</izz></inertia></inertial>
       </link>
-      <link name="lr_femur"><pose>-1.3310 -0.7152 -0.2001 0 0 0</pose>
-        <visual name="visual"><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lr_femur.stl</uri></mesh></geometry></visual>
-        <collision name="collision"><geometry><box><size>0.755 0.398 0.336</size></box></geometry></collision>
-        <inertial><mass>1.2</mass><inertia><ixx>0.04</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.04</iyy><iyz>0</iyz><izz>0.04</izz></inertia></inertial>
+      <link name="lr_femur">
+        <visual name="visual"><pose>-0.3955 -0.2162 -0.1580 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lr_femur.stl</uri></mesh></geometry></visual>
+        <collision name="collision"><pose>-0.3955 -0.2162 -0.1580 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lr_femur.stl</uri></mesh></geometry><surface><friction><ode><mu>0.5</mu><mu2>0.5</mu2></ode></friction></surface></collision>
+        <inertial><mass>1.0</mass><inertia><ixx>0.022632515655121387</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.05695511914260272</iyy><iyz>0</iyz><izz>0.06072435572952326</izz></inertia></inertial>
       </link>
-      <link name="lr_foot"><pose>-1.5572 -0.8156 -0.3113 0 0 0</pose>
-        <visual name="visual"><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lr_foot.stl</uri></mesh></geometry></visual>
-        <collision name="collision"><geometry><box><size>0.202 0.204 0.211</size></box></geometry></collision>
-        <inertial><mass>0.8</mass><inertia><ixx>0.01</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.01</iyy><iyz>0</iyz><izz>0.01</izz></inertia></inertial>
+      <link name="lr_foot">
+        <visual name="visual"><pose>0.0002 -0.0129 -0.0580 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lr_foot.stl</uri></mesh></geometry></visual>
+        <collision name="collision"><pose>0.0002 -0.0129 -0.0580 0 0 0</pose><geometry><mesh><uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/lr_foot.stl</uri></mesh></geometry><surface><friction><ode><mu>1.0</mu><mu2>1.0</mu2></ode></friction></surface></collision>
+        <inertial><mass>0.8</mass><inertia><ixx>0.005743090634122927</ixx><ixy>0</ixy><ixz>0</ixz><iyy>0.0057096062255567</iyy><iyz>0</iyz><izz>0.005496366250098998</izz></inertia></inertial>
       </link>
-      <joint name="hip_lr" type="fixed"><parent>body</parent><child>lr_coxa</child></joint>
-      <joint name="knee_lr" type="fixed"><parent>lr_coxa</parent><child>lr_femur</child></joint>
-      <joint name="ankle_lr" type="fixed"><parent>lr_femur</parent><child>lr_foot</child></joint>
+      <joint name="hip_lr" type="revolute"><parent>body</parent><child>lr_coxa</child><pose>-0.3693 -0.2232 0.4541 0 0 0</pose><axis><xyz>0.0000 0.0000 1.0000</xyz></axis><dynamics><damping>100</damping><friction>1.0</friction></dynamics></joint>
+      <joint name="knee_lr" type="revolute"><parent>lr_coxa</parent><child>lr_femur</child><pose>-0.5889 -0.2758 0.1050 0 0 0</pose><axis><xyz>-0.4290 0.9033 0.0000</xyz></axis><dynamics><damping>100</damping><friction>1.0</friction></dynamics></joint>
+      <joint name="ankle_lr" type="revolute"><parent>lr_femur</parent><child>lr_foot</child><pose>-0.6218 -0.3037 -0.2112 0 0 0</pose><axis><xyz>-0.9033 -0.4290 0.0000</xyz></axis><dynamics><damping>100</damping><friction>1.0</friction></dynamics></joint>
     </model>
   </world>
 </sdf>
