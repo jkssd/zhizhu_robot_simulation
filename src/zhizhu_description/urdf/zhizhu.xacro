@@ -6,17 +6,17 @@
   <xacro:macro name="leg" params="name coxa_part femur_part foot_part hip knee ankle coxa_origin femur_origin foot_origin">
     <link name="${name}_coxa">
       <visual><origin xyz="${coxa_origin}"/><geometry><mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/part_${coxa_part}.stl"/></geometry><material name="zhizhu_gray"/></visual>
-      <collision><geometry><box size="0.7 0.3 0.2"/></geometry></collision>
+      <collision><origin xyz="${coxa_origin}"/><geometry><mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/part_${coxa_part}.stl"/></geometry></collision>
       <inertial><mass value="1.5"/><inertia ixx="0.05" ixy="0" ixz="0" iyy="0.05" iyz="0" izz="0.05"/></inertial>
     </link>
     <link name="${name}_femur">
       <visual><origin xyz="${femur_origin}"/><geometry><mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/part_${femur_part}.stl"/></geometry><material name="zhizhu_gray"/></visual>
-      <collision><geometry><box size="0.75 0.3 0.3"/></geometry></collision>
+      <collision><origin xyz="${femur_origin}"/><geometry><mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/part_${femur_part}.stl"/></geometry></collision>
       <inertial><mass value="1.2"/><inertia ixx="0.04" ixy="0" ixz="0" iyy="0.04" iyz="0" izz="0.04"/></inertial>
     </link>
     <link name="${name}_foot">
       <visual><origin xyz="${foot_origin}"/><geometry><mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/part_${foot_part}.stl"/></geometry><material name="zhizhu_gray"/></visual>
-      <collision><geometry><sphere radius="0.12"/></geometry></collision>
+      <collision><origin xyz="${foot_origin}"/><geometry><mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/part_${foot_part}.stl"/></geometry></collision>
       <inertial><mass value="0.8"/><inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/></inertial>
     </link>
     <joint name="hip_${name}" type="revolute"><parent link="body"/><child link="${name}_coxa"/><origin xyz="${hip}"/><axis xyz="0 0 1"/><limit lower="-1.57" upper="1.57" effort="50" velocity="5"/><dynamics damping="0.1" friction="0.1"/></joint>
@@ -26,7 +26,7 @@
 
   <link name="body">
     <visual><origin xyz="0 0 0"/><geometry><mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/part_0.stl"/></geometry><material name="zhizhu_gray"/></visual>
-    <collision><geometry><box size="0.73 0.70 0.44"/></geometry></collision>
+    <collision><origin xyz="0 0 0"/><geometry><mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/part_0.stl"/></geometry></collision>
     <inertial><mass value="5.0"/><inertia ixx="0.35" ixy="0" ixz="0" iyy="0.30" iyz="0" izz="0.40"/></inertial>
   </link>
 

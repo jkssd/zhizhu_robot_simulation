@@ -1,9 +1,4 @@
-"""Start Gazebo Classic with the zhizhu world + publish the TF tree.
-
-The split model is embedded in worlds/zhizhu.world as SDF (spawn_entity does not
-render visuals in this gazebo_ros/Gazebo combo). robot_state_publisher publishes
-the full body -> 6 legs TF tree from the xacro.
-"""
+"""Start Gazebo Classic with the zhizhu world + publish TF."""
 import os
 
 from ament_index_python.packages import get_package_share_directory
@@ -19,6 +14,11 @@ def generate_launch_description():
     xacro_path = os.path.join(get_package_share_directory(pkg), "urdf", "zhizhu.xacro")
     world_path = os.path.join(get_package_share_directory(pkg), "worlds", "zhizhu.world")
 
+    joint_state_publisher = Node(
+        package="joint_state_publisher",
+        executable="joint_state_publisher",
+    )
+
     robot_state_publisher = Node(
         package="robot_state_publisher",
         executable="robot_state_publisher",
@@ -32,4 +32,4 @@ def generate_launch_description():
         launch_arguments={"world": world_path}.items(),
     )
 
-    return LaunchDescription([robot_state_publisher, gazebo])
+    return LaunchDescription([joint_state_publisher, robot_state_publisher, gazebo])

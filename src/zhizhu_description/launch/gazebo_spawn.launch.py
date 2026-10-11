@@ -14,6 +14,11 @@ def generate_launch_description():
     xacro_path = os.path.join(get_package_share_directory(pkg), "urdf", "zhizhu.xacro")
     world_path = os.path.join(get_package_share_directory(pkg), "worlds", "spawn.world")
 
+    joint_state_publisher = Node(
+        package="joint_state_publisher",
+        executable="joint_state_publisher",
+    )
+
     robot_state_publisher = Node(
         package="robot_state_publisher",
         executable="robot_state_publisher",
@@ -34,4 +39,4 @@ def generate_launch_description():
         output="screen",
     )
 
-    return LaunchDescription([robot_state_publisher, gazebo, spawn])
+    return LaunchDescription([joint_state_publisher, robot_state_publisher, gazebo, spawn])
