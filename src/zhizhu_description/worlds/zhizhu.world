@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!--
+  zhizhu static display world.
+
+  The model is embedded here DIRECTLY as SDF (not spawned via spawn_entity),
+  because gazebo_ros 3.9.0 + Gazebo Classic 11 does not render visuals of
+  models inserted through /spawn_entity in this environment. World-file models
+  render correctly.
+
+  Mesh pose matches urdf/zhizhu.urdf: scale 0.001 (mm->m), roll 180 deg about X
+  (the CAD export was upside down), then re-grounded so the model sits on z=0.
+-->
+<sdf version="1.6">
+  <world name="default">
+    <scene>
+      <ambient>0.55 0.55 0.55 1</ambient>
+      <background>0.7 0.7 0.75 1</background>
+      <shadows>false</shadows>
+    </scene>
+
+    <light type="directional" name="sun">
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.9 0.9 0.9 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <direction>-0.5 0.3 -1</direction>
+    </light>
+
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <model name="zhizhu">
+      <static>true</static>
+      <link name="base_link">
+        <visual name="visual">
+          <pose>-1.8747 1.0185 1.8944 3.14159 0 0</pose>
+          <geometry>
+            <mesh>
+              <uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/zhizhu.stl</uri>
+              <scale>0.001 0.001 0.001</scale>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0.7 0.7 0.72 1</ambient>
+            <diffuse>0.7 0.7 0.72 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>

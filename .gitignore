@@ -1,0 +1,13 @@
+# Colcon build artifacts
+build/
+install/
+log/
+
+# Original CAD source archive (the extracted STL is kept in assets/)
+*.zip
+装配 体.STL
+装配 体(1).zip
+
+# Python
+__pycache__/
+*.pyc
