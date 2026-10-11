@@ -27,7 +27,7 @@
 
   <link name="body">
     <visual>
-      <origin xyz="-1.8747 -1.0185 -1.0" rpy="0 0 0"/>
+      <origin xyz="-1.8747 1.0185 1.8944" rpy="3.14159 0 0"/>
       <geometry>
         <mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/zhizhu.stl"
               scale="0.001 0.001 0.001"/>

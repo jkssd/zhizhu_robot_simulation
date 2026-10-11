@@ -34,7 +34,7 @@
       <static>true</static>
       <link name="body">
         <visual name="visual">
-          <pose>-1.8747 -1.0185 -1.0 0 0 0</pose>
+          <pose>-1.8747 1.0185 1.8944 3.14159 0 0</pose>
           <geometry>
             <mesh>
               <uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/zhizhu.stl</uri>
