@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <!--
-  zhizhu (spider) assembly — used by RViz only.
+  zhizhu (spider) assembly.
 
-  For Gazebo the model is embedded directly in worlds/zhizhu.world (see the note
-  there): gazebo_ros 3.9.0 + Gazebo Classic 11 does not render visuals inserted
-  through /spawn_entity, so the world file carries the SDF model instead.
+  Used by RViz (display.launch.py) and by gazebo_spawn.launch.py (spawn_entity).
+  For a static display that always works, gazebo.launch.py loads worlds/zhizhu.world
+  which embeds the model directly as SDF.
 
   Mesh: meshes/zhizhu.stl (single binary STL, CAD units = mm).
   Bounding box (mm): X 36.9..3712.5  Y 126.2..1910.8  Z 1000.0..1894.4
@@ -12,10 +12,13 @@
 
   * scale="0.001 ..."  : mm -> m.
   * rpy="3.14159 0 0"  : roll 180 deg about X (CAD export was upside down; the
-    suction-cup side faces UP after this). To flip about the other axis instead,
-    use rpy="0 3.14159 0" and xyz="1.8747 -1.0185 1.8944".
+    suction-cup side faces UP after this). Flip about the other axis instead
+    with rpy="0 3.14159 0" and xyz="1.8747 -1.0185 1.8944".
   * origin xyz="-1.8747 1.0185 1.8944" : re-centres and grounds the flipped
     mesh so it sits on z=0.
+  * A box <collision> + <inertial> so the model can be spawned with physics for
+    future motion. The box approximates the flipped model (3.68 x 1.78 x 0.89 m,
+    centred 0.447 m above the ground).
 -->
 <robot name="zhizhu">
 
@@ -32,6 +35,18 @@
       </geometry>
       <material name="zhizhu_gray"/>
     </visual>
+
+    <collision>
+      <origin xyz="0 0 0.447" rpy="0 0 0"/>
+      <geometry>
+        <box size="3.68 1.78 0.894"/>
+      </geometry>
+    </collision>
+
+    <inertial>
+      <mass value="10.0"/>
+      <inertia ixx="3.3" ixy="0.0" ixz="0.0" iyy="11.9" iyz="0.0" izz="13.9"/>
+    </inertial>
   </link>
 
 </robot>
