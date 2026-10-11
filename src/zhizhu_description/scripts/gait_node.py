@@ -34,10 +34,10 @@ class GaitNode(Node):
         for nm in self.leg_names:
             self.joint_names += [f"hip_{nm}", f"knee_{nm}", f"ankle_{nm}"]
 
-        self.declare_parameter("stride", 0.04)
-        self.declare_parameter("lift", 0.03)
+        self.declare_parameter("stride", 0.08)
+        self.declare_parameter("lift", 0.05)
         self.declare_parameter("rate", 40.0)
-        self.declare_parameter("speed", 0.6)
+        self.declare_parameter("speed", 0.8)
 
         self.stride = self.get_parameter("stride").value
         self.lift = self.get_parameter("lift").value
