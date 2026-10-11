@@ -22,7 +22,7 @@ def generate_launch_description():
     robot_state_publisher = Node(
         package="robot_state_publisher",
         executable="robot_state_publisher",
-        parameters=[{"robot_description": Command(["xacro", xacro_path])}],
+        parameters=[{"robot_description": Command(["xacro ", xacro_path])}],
     )
 
     gazebo = IncludeLaunchDescription(

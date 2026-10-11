@@ -3,20 +3,20 @@
 
   <material name="zhizhu_gray"><color rgba="0.7 0.7 0.72 1.0"/></material>
 
-  <xacro:macro name="leg" params="name coxa_part femur_part foot_part hip knee ankle coxa_origin femur_origin foot_origin">
+  <xacro:macro name="leg" params="name hip knee ankle coxa_origin femur_origin foot_origin">
     <link name="${name}_coxa">
-      <visual><origin xyz="${coxa_origin}"/><geometry><mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/part_${coxa_part}.stl"/></geometry><material name="zhizhu_gray"/></visual>
-      <collision><origin xyz="${coxa_origin}"/><geometry><mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/part_${coxa_part}.stl"/></geometry></collision>
+      <visual><origin xyz="${coxa_origin}"/><geometry><mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/${name}_coxa.stl"/></geometry><material name="zhizhu_gray"/></visual>
+      <collision><origin xyz="${coxa_origin}"/><geometry><mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/${name}_coxa.stl"/></geometry></collision>
       <inertial><mass value="1.5"/><inertia ixx="0.05" ixy="0" ixz="0" iyy="0.05" iyz="0" izz="0.05"/></inertial>
     </link>
     <link name="${name}_femur">
-      <visual><origin xyz="${femur_origin}"/><geometry><mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/part_${femur_part}.stl"/></geometry><material name="zhizhu_gray"/></visual>
-      <collision><origin xyz="${femur_origin}"/><geometry><mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/part_${femur_part}.stl"/></geometry></collision>
+      <visual><origin xyz="${femur_origin}"/><geometry><mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/${name}_femur.stl"/></geometry><material name="zhizhu_gray"/></visual>
+      <collision><origin xyz="${femur_origin}"/><geometry><mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/${name}_femur.stl"/></geometry></collision>
       <inertial><mass value="1.2"/><inertia ixx="0.04" ixy="0" ixz="0" iyy="0.04" iyz="0" izz="0.04"/></inertial>
     </link>
     <link name="${name}_foot">
-      <visual><origin xyz="${foot_origin}"/><geometry><mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/part_${foot_part}.stl"/></geometry><material name="zhizhu_gray"/></visual>
-      <collision><origin xyz="${foot_origin}"/><geometry><mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/part_${foot_part}.stl"/></geometry></collision>
+      <visual><origin xyz="${foot_origin}"/><geometry><mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/${name}_foot.stl"/></geometry><material name="zhizhu_gray"/></visual>
+      <collision><origin xyz="${foot_origin}"/><geometry><mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/${name}_foot.stl"/></geometry></collision>
       <inertial><mass value="0.8"/><inertia ixx="0.01" ixy="0" ixz="0" iyy="0.01" iyz="0" izz="0.01"/></inertial>
     </link>
     <joint name="hip_${name}" type="revolute"><parent link="body"/><child link="${name}_coxa"/><origin xyz="${hip}"/><axis xyz="0 0 1"/><limit lower="-1.57" upper="1.57" effort="50" velocity="5"/><dynamics damping="0.1" friction="0.1"/></joint>
@@ -25,16 +25,16 @@
   </xacro:macro>
 
   <link name="body">
-    <visual><origin xyz="0 0 0"/><geometry><mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/part_0.stl"/></geometry><material name="zhizhu_gray"/></visual>
-    <collision><origin xyz="0 0 0"/><geometry><mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/part_0.stl"/></geometry></collision>
-    <inertial><mass value="5.0"/><inertia ixx="0.35" ixy="0" ixz="0" iyy="0.30" iyz="0" izz="0.40"/></inertial>
+    <visual><origin xyz="0 0 0"/><geometry><mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/body.stl"/></geometry><material name="zhizhu_gray"/></visual>
+    <collision><origin xyz="0 0 0"/><geometry><mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/parts_urdf/body.stl"/></geometry></collision>
+    <inertial><mass value="6.0"/><inertia ixx="0.4" ixy="0" ixz="0" iyy="0.35" iyz="0" izz="0.45"/></inertial>
   </link>
 
-  <xacro:leg name="rf" coxa_part="1" femur_part="7" foot_part="13" hip="0.6742 0.3846 -0.0223" knee="0.6209 0.2902 0.0107" ankle="0.2448 0.0960 -0.0791" coxa_origin="-0.7066 -0.4249 -0.5901" femur_origin="-1.3275 -0.7152 -0.6008" foot_origin="-1.5723 -0.8111 -0.5216"/>
-  <xacro:leg name="rm" coxa_part="6" femur_part="12" foot_part="18" hip="0.7179 -0.0483 -0.0411" knee="0.6838 -0.0121 -0.1247" ankle="0.2766 -0.0057 -0.0958" coxa_origin="-0.7502 0.0080 -0.5713" femur_origin="-1.4340 0.0202 -0.4465" foot_origin="-1.7107 0.0259 -0.3507"/>
-  <xacro:leg name="rr" coxa_part="5" femur_part="11" foot_part="17" hip="0.6869 -0.4464 0.0460" knee="0.6345 -0.2340 -0.0648" ankle="0.2426 -0.0717 -0.1186" coxa_origin="-0.7193 0.4061 -0.6584" femur_origin="-1.3537 0.6401 -0.5935" foot_origin="-1.5964 0.7118 -0.4749"/>
-  <xacro:leg name="lf" coxa_part="3" femur_part="9" foot_part="15" hip="-0.7971 0.3657 -0.0673" knee="-0.5934 0.2340 -0.2338" ankle="-0.2016 0.0717 -0.1797" coxa_origin="0.7647 -0.4060 -0.5450" femur_origin="1.3581 -0.6400 -0.3112" foot_origin="1.5597 -0.7117 -0.1315"/>
-  <xacro:leg name="lm" coxa_part="2" femur_part="8" foot_part="14" hip="-0.8228 -0.0323 -0.0918" knee="-0.6650 0.0121 -0.2024" ankle="-0.2638 0.0057 -0.1269" coxa_origin="0.7905 -0.0080 -0.5206" femur_origin="1.4555 -0.0201 -0.3182" foot_origin="1.7193 -0.0258 -0.1913"/>
-  <xacro:leg name="lr" coxa_part="4" femur_part="10" foot_part="16" hip="-0.7749 -0.4653 -0.1003" knee="-0.6110 -0.2902 -0.1110" ankle="-0.2246 -0.0960 -0.1255" coxa_origin="0.7426 0.4250 -0.5121" femur_origin="1.3536 0.7152 -0.4011" foot_origin="1.5782 0.8112 -0.2756"/>
+  <xacro:leg name="rf" hip="0.7292 0.4250 -0.0111" knee="0.6209 0.2902 0.0107" ankle="0.2435 0.1004 -0.0647" coxa_origin="-0.7066 -0.4249 -0.5901" femur_origin="-1.3275 -0.7152 -0.6008" foot_origin="-1.5711 -0.8155 -0.5361"/>
+  <xacro:leg name="rm" hip="0.7729 -0.0080 -0.0299" knee="0.6838 -0.0121 -0.1247" ankle="0.2718 -0.0053 -0.0815" coxa_origin="-0.7502 0.0080 -0.5713" femur_origin="-1.4340 0.0202 -0.4466" foot_origin="-1.7059 0.0255 -0.3651"/>
+  <xacro:leg name="rr" hip="0.7419 -0.4061 0.0572" knee="0.6345 -0.2340 -0.0648" ankle="0.2428 -0.0751 -0.1039" coxa_origin="-0.7193 0.4061 -0.6584" femur_origin="-1.3537 0.6401 -0.5936" foot_origin="-1.5966 0.7152 -0.4897"/>
+  <xacro:leg name="lf" hip="-0.7421 0.4061 -0.0562" knee="-0.5934 0.2340 -0.2338" ankle="-0.2057 0.0751 -0.1656" coxa_origin="0.7647 -0.4060 -0.5450" femur_origin="1.3581 -0.6400 -0.3112" foot_origin="1.5638 -0.7151 -0.1456"/>
+  <xacro:leg name="lm" hip="-0.7678 0.0080 -0.0806" knee="-0.6650 0.0121 -0.2024" ankle="-0.2607 0.0053 -0.1121" coxa_origin="0.7905 -0.0080 -0.5206" femur_origin="1.4555 -0.0201 -0.3182" foot_origin="1.7161 -0.0254 -0.2061"/>
+  <xacro:leg name="lr" hip="-0.7200 -0.4250 -0.0891" knee="-0.6110 -0.2902 -0.1110" ankle="-0.2262 -0.1004 -0.1111" coxa_origin="0.7426 0.4250 -0.5121" femur_origin="1.3536 0.7152 -0.4011" foot_origin="1.5798 0.8156 -0.2900"/>
 
 </robot>
