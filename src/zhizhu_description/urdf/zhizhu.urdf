@@ -1,52 +1,64 @@
 <?xml version="1.0"?>
 <!--
-  zhizhu (spider) assembly.
+  zhizhu hexapod — Stage 1: body + 6 virtual feet (estimate).
 
-  Used by RViz (display.launch.py) and by gazebo_spawn.launch.py (spawn_entity).
-  For a static display that always works, gazebo.launch.py loads worlds/zhizhu.world
-  which embeds the model directly as SDF.
+  body  : visual = the single STL (whole robot), collision = approximate hub box.
+  6 feet: virtual spheres (RED, visible for now) at ESTIMATED positions so the
+          robot can sit on the ground. Positions are rough guesses — refine after
+          viewing in RViz / Gazebo.
 
   Mesh: meshes/zhizhu.stl (single binary STL, CAD units = mm).
   Bounding box (mm): X 36.9..3712.5  Y 126.2..1910.8  Z 1000.0..1894.4
   => ~3.68 x 1.78 x 0.89 m.
 
-  * scale="0.001 ..."  : mm -> m.
-  * rpy="3.14159 0 0"  : roll 180 deg about X (CAD export was upside down; the
-    suction-cup side faces UP after this). Flip about the other axis instead
-    with rpy="0 3.14159 0" and xyz="1.8747 -1.0185 1.8944".
-  * origin xyz="-1.8747 1.0185 1.8944" : re-centres and grounds the flipped
-    mesh so it sits on z=0.
-  * A box <collision> + <inertial> so the model can be spawned with physics for
-    future motion. The box approximates the flipped model (3.68 x 1.78 x 0.89 m,
-    centred 0.447 m above the ground).
+  rpy="0 0 0" (flipped back): the suction/foot side faces DOWN (towards ground).
+  origin xyz="-1.8747 -1.0185 -1.0": grounds the mesh so CAD z=1000 sits at z=0.
+  Foot positions are in the body frame (metres), z=0.05 so the sphere bottom
+  touches the ground.
 -->
 <robot name="zhizhu">
 
   <material name="zhizhu_gray">
     <color rgba="0.7 0.7 0.72 1.0"/>
   </material>
+  <material name="foot_marker">
+    <color rgba="1.0 0.2 0.1 1.0"/>
+  </material>
 
-  <link name="base_link">
+  <link name="body">
     <visual>
-      <origin xyz="-1.8747 1.0185 1.8944" rpy="3.14159 0 0"/>
+      <origin xyz="-1.8747 -1.0185 -1.0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/zhizhu.stl"
               scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="zhizhu_gray"/>
     </visual>
-
     <collision>
-      <origin xyz="0 0 0.447" rpy="0 0 0"/>
+      <origin xyz="0 0 0.3" rpy="0 0 0"/>
       <geometry>
-        <box size="3.68 1.78 0.894"/>
+        <box size="0.6 0.8 0.5"/>
       </geometry>
     </collision>
-
     <inertial>
       <mass value="10.0"/>
-      <inertia ixx="3.3" ixy="0.0" ixz="0.0" iyy="11.9" iyz="0.0" izz="13.9"/>
+      <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
+
+  <!-- ===== 6 virtual feet (ESTIMATED positions, refine later) ===== -->
+  <link name="foot_lf"><visual><geometry><sphere radius="0.08"/></geometry><material name="foot_marker"/></visual><collision><geometry><sphere radius="0.08"/></geometry></collision><inertial><mass value="0.5"/><inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/></inertial></link>
+  <link name="foot_lm"><visual><geometry><sphere radius="0.08"/></geometry><material name="foot_marker"/></visual><collision><geometry><sphere radius="0.08"/></geometry></collision><inertial><mass value="0.5"/><inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/></inertial></link>
+  <link name="foot_lr"><visual><geometry><sphere radius="0.08"/></geometry><material name="foot_marker"/></visual><collision><geometry><sphere radius="0.08"/></geometry></collision><inertial><mass value="0.5"/><inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/></inertial></link>
+  <link name="foot_rf"><visual><geometry><sphere radius="0.08"/></geometry><material name="foot_marker"/></visual><collision><geometry><sphere radius="0.08"/></geometry></collision><inertial><mass value="0.5"/><inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/></inertial></link>
+  <link name="foot_rm"><visual><geometry><sphere radius="0.08"/></geometry><material name="foot_marker"/></visual><collision><geometry><sphere radius="0.08"/></geometry></collision><inertial><mass value="0.5"/><inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/></inertial></link>
+  <link name="foot_rr"><visual><geometry><sphere radius="0.08"/></geometry><material name="foot_marker"/></visual><collision><geometry><sphere radius="0.08"/></geometry></collision><inertial><mass value="0.5"/><inertia ixx="0.001" ixy="0" ixz="0" iyy="0.001" iyz="0" izz="0.001"/></inertial></link>
+
+  <joint name="body_to_foot_lf" type="fixed"><parent link="body"/><child link="foot_lf"/><origin xyz="-1.2 -0.85 0.05" rpy="0 0 0"/></joint>
+  <joint name="body_to_foot_lm" type="fixed"><parent link="body"/><child link="foot_lm"/><origin xyz="0.0 -0.85 0.05" rpy="0 0 0"/></joint>
+  <joint name="body_to_foot_lr" type="fixed"><parent link="body"/><child link="foot_lr"/><origin xyz="1.2 -0.85 0.05" rpy="0 0 0"/></joint>
+  <joint name="body_to_foot_rf" type="fixed"><parent link="body"/><child link="foot_rf"/><origin xyz="-1.2 0.85 0.05" rpy="0 0 0"/></joint>
+  <joint name="body_to_foot_rm" type="fixed"><parent link="body"/><child link="foot_rm"/><origin xyz="0.0 0.85 0.05" rpy="0 0 0"/></joint>
+  <joint name="body_to_foot_rr" type="fixed"><parent link="body"/><child link="foot_rr"/><origin xyz="1.2 0.85 0.05" rpy="0 0 0"/></joint>
 
 </robot>

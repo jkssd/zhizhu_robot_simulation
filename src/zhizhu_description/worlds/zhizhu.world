@@ -1,14 +1,15 @@
 <?xml version="1.0"?>
 <!--
-  zhizhu static display world.
+  zhizhu static display world (Stage 1: body + 6 virtual feet).
 
-  The model is embedded here DIRECTLY as SDF (not spawned via spawn_entity),
+  The model is embedded here directly as SDF (not spawned via spawn_entity),
   because gazebo_ros 3.9.0 + Gazebo Classic 11 does not render visuals of
   models inserted through /spawn_entity in this environment. World-file models
   render correctly.
 
-  Mesh pose matches urdf/zhizhu.urdf: scale 0.001 (mm->m), roll 180 deg about X
-  (the CAD export was upside down), then re-grounded so the model sits on z=0.
+  Mesh pose: scale 0.001 (mm->m), rpy=0 (flipped back so feet face down),
+  grounded so the mesh sits on z=0.
+  6 red spheres = ESTIMATED virtual feet positions (refine later).
 -->
 <sdf version="1.6">
   <world name="default">
@@ -31,9 +32,9 @@
 
     <model name="zhizhu">
       <static>true</static>
-      <link name="base_link">
+      <link name="body">
         <visual name="visual">
-          <pose>-1.8747 1.0185 1.8944 3.14159 0 0</pose>
+          <pose>-1.8747 -1.0185 -1.0 0 0 0</pose>
           <geometry>
             <mesh>
               <uri>file:///home/khalil/ROS/zhizhu/install/zhizhu_description/share/zhizhu_description/meshes/zhizhu.stl</uri>
@@ -47,6 +48,21 @@
           </material>
         </visual>
       </link>
+
+      <!-- 6 virtual feet (red spheres, estimated positions) -->
+      <link name="foot_lf"><visual name="visual"><geometry><sphere><radius>0.08</radius></sphere></geometry><material><ambient>1 0.2 0.1 1</ambient><diffuse>1 0.2 0.1 1</diffuse></material></visual></link>
+      <link name="foot_lm"><visual name="visual"><geometry><sphere><radius>0.08</radius></sphere></geometry><material><ambient>1 0.2 0.1 1</ambient><diffuse>1 0.2 0.1 1</diffuse></material></visual></link>
+      <link name="foot_lr"><visual name="visual"><geometry><sphere><radius>0.08</radius></sphere></geometry><material><ambient>1 0.2 0.1 1</ambient><diffuse>1 0.2 0.1 1</diffuse></material></visual></link>
+      <link name="foot_rf"><visual name="visual"><geometry><sphere><radius>0.08</radius></sphere></geometry><material><ambient>1 0.2 0.1 1</ambient><diffuse>1 0.2 0.1 1</diffuse></material></visual></link>
+      <link name="foot_rm"><visual name="visual"><geometry><sphere><radius>0.08</radius></sphere></geometry><material><ambient>1 0.2 0.1 1</ambient><diffuse>1 0.2 0.1 1</diffuse></material></visual></link>
+      <link name="foot_rr"><visual name="visual"><geometry><sphere><radius>0.08</radius></sphere></geometry><material><ambient>1 0.2 0.1 1</ambient><diffuse>1 0.2 0.1 1</diffuse></material></visual></link>
+
+      <joint name="body_to_foot_lf" type="fixed"><parent>body</parent><child>foot_lf</child><pose>-1.2 -0.85 0.05 0 0 0</pose></joint>
+      <joint name="body_to_foot_lm" type="fixed"><parent>body</parent><child>foot_lm</child><pose>0.0 -0.85 0.05 0 0 0</pose></joint>
+      <joint name="body_to_foot_lr" type="fixed"><parent>body</parent><child>foot_lr</child><pose>1.2 -0.85 0.05 0 0 0</pose></joint>
+      <joint name="body_to_foot_rf" type="fixed"><parent>body</parent><child>foot_rf</child><pose>-1.2 0.85 0.05 0 0 0</pose></joint>
+      <joint name="body_to_foot_rm" type="fixed"><parent>body</parent><child>foot_rm</child><pose>0.0 0.85 0.05 0 0 0</pose></joint>
+      <joint name="body_to_foot_rr" type="fixed"><parent>body</parent><child>foot_rr</child><pose>1.2 0.85 0.05 0 0 0</pose></joint>
     </model>
   </world>
 </sdf>
